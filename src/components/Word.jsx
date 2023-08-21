@@ -5,7 +5,11 @@ class Word extends Component {
         color: 'yellow',
      } 
     render() { 
-        return ( <div>{this.state.word}</div>);
+        return ( 
+            <div style={{ color:this.state.color, fontSize:'4em' }}>
+            { this.state.word }
+            </div>
+        );
     }
 }
  
