@@ -10,7 +10,7 @@ class Word extends Component {
     }
     render() { 
         return ( 
-            <div style={{ color:this.renderColor(this.state.color), fontSize:'4em' }}>
+            <div className='Word' style={{ color:this.renderColor(this.state.color) }}>
             { this.state.word }
             </div>
         );
