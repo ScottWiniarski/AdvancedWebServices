@@ -18,6 +18,7 @@ class Word extends Component {
       }
 
     render() { 
+        console.log(this.props);
         return ( 
             <div onClick={ this.handleClick } className='Word' style={{ color:this.renderColor(this.state.color) }}>
             { this.state.word }

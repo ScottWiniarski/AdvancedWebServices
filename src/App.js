@@ -17,7 +17,12 @@ class App extends Component {
         <header className="App-header">
           Nugatory-Example
         </header>
-        {this.state.words.map(word => <Word key={word.id} />) }
+        { this.state.words.map(word => 
+          <Word 
+            key={ word.id } 
+            word={ word.word } 
+            color={ word.color } 
+          />) }
       </div>
      );
   }
