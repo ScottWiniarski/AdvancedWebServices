@@ -10,6 +10,8 @@ class App extends Component {
           Nugatory-Example
         </header>
         <Word />
+        <Word />
+        <Word />
       </div>
      );
   }
