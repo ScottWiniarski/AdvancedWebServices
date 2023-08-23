@@ -9,9 +9,9 @@ class Word extends Component {
         return (color === undefined || color === null ? 'black' : color);
     }
     render() { 
-        console.log(this.props);
+        // console.log(this.props);
         return ( 
-            <div onClick={ this.props.onDelete } className='Word' style={{ color:this.renderColor(this.state.color) }}>
+            <div onClick={ () => this.props.onDelete(this.props.id) } className='Word' style={{ color:this.renderColor(this.state.color) }}>
             { this.state.word }
             </div>
         );
