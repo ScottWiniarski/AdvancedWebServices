@@ -11,7 +11,10 @@ class App extends Component {
     ]
   }
   handleDelete = (wordId) => {
-    console.log(`delete word: ${wordId}`);
+    //creates a new array, by filtering out any id that doesn't equal the one that's clicked.
+    const words = this.state.words.filter(w => w.id !== wordId);
+    // assigns to the newly created array.
+    this.setState({ words:words });
   }
 
   render() { 
