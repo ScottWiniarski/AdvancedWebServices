@@ -8,7 +8,6 @@ class App extends Component {
       { id: 1, word: 'banana', color: 'yellow' },
       { id: 2, word: 'apple', color: 'red' },
       { id: 3, word: 'lime', color: 'green' },
-      { id: 4, word: 'watermelon', color: 'green' },
     ]
   }
   render() { 
