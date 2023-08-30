@@ -3,24 +3,33 @@ import React, { Component } from 'react';
 class NewWord extends Component {
     state = {
         showForm: false,
-        
+        word: '',
+        color: '#000000',
     }
     toggleForm = () => this.setState({ showForm : !this.state.showForm });
+    handleChange = (e) => this.setState({ [e.target.name]: e.target.value});
 
   render() { 
+    const { showForm, word, color } = this.state;
     return (
     <div className='New-word'>
         {
-          (this.state.showForm) ? 
+          (showForm) ? 
             <form>
               <input 
                 type="text"
                 id="word"
+                name="word"
+                value={ word }
+                onChange={ this.handleChange }
                 placeholder="Word"
                 autoComplete="off" />
               <input 
                 type="color"
                 id="color"
+                name="color"
+                value={ color }
+                onChange={ this.handleChange }
                 placeholder="Color"
                 autoComplete="off" />
               <button type="button">Save</button>
@@ -28,8 +37,7 @@ class NewWord extends Component {
             </form>
           :
           <span onClick={this.toggleForm} className='Toggle-form'>New Word</span>
-        }
-        
+        } 
       </div>
     );
   }
