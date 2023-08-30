@@ -19,20 +19,27 @@ class App extends Component {
     this.setState({ words:words });
   }
 
+  componentDidMount() {
+    console.log("App mounted");
+    this.state.words.forEach(function(word) {
+      console.log(word.color);
+    });
+  }
+
   render() { 
+    const { words } = this.state;
     return ( 
       <div className="App">
         <header className="App-header">
           Nugatory-Example
         </header>
-        { this.state.words.map(word => 
+        { words.map(word => 
           <Word 
             key={ word.id }
             word={ word } 
-            onDelete={ this.handleDelete }
-            
+            onDelete={ this.handleDelete }           
           />) }
-          <Counter totalWords={ this.state.words.length } />
+          <Counter totalWords={ words.length } />
       </div>
      );
   }
