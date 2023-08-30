@@ -9,8 +9,8 @@ class Word extends Component {
     componentDidMount() {
         //const el = document.getElementById(this.props.word.id);
         //console.log(el);
-        //console.log(this.wordEl.current);
-        this.wordEl.current.style.color = 'purple';
+        console.log(this.wordEl.current);
+        //this.wordEl.current.style.color = 'purple';
       }
     componentWillUnmount() {
         console.log(`goodbye, ${ this.props.word.word }`);
