@@ -19,6 +19,10 @@ class App extends Component {
     this.setState({ words:words });
   }
 
+  handleAdd = (word, color) => {
+    console.log(`word: ${word}, color: ${color}`);
+  }
+
   componentDidMount() {
     console.log("App mounted");
     // this.state.words.forEach(function(word) {
@@ -40,7 +44,7 @@ class App extends Component {
             onDelete={ this.handleDelete }           
           />) }
           <Counter totalWords={ words.length } />
-          <NewWord></NewWord>
+          <NewWord onAdd={ this.handleAdd } />
       </div>
      );
   }
