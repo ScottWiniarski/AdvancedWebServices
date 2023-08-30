@@ -6,11 +6,20 @@ class Word extends Component {
     renderColor(color) {
         return (color === undefined || color === null ? 'black' : color);
     }
+    // return random number between min & max
+    getRandomNumber = (min, max) => Math.random() * (max - min) + min;
+    // return random number between 0 and window height
+    getRandomTop = () => parseInt(this.getRandomNumber(0, window.innerHeight));
+    // return random number between 0 and window width
+    getRandomLeft = () => parseInt(this.getRandomNumber(0, window.innerWidth));
+    
     componentDidMount() {
         //const el = document.getElementById(this.props.word.id);
         //console.log(el);
-        console.log(this.wordEl.current);
+        //console.log(this.wordEl.current);
         //this.wordEl.current.style.color = 'purple';
+        this.wordEl.current.style.top = this.getRandomTop() + 'px';
+        this.wordEl.current.style.left = this.getRandomLeft() + 'px';
       }
     componentWillUnmount() {
         console.log(`goodbye, ${ this.props.word.word }`);
