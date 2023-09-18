@@ -9,12 +9,9 @@ const App = () => {
   const apiEndpoint = "https://nugatory-sfw-delete.azurewebsites.net/api/word";
   const [words, setWords] = useState([]);
 
-  const handleDelete = (wordId) => {
-    // //creates a new array, by filtering out any id that doesn't equal the one that's clicked.
-    // const mutableWords = words.filter(w => w.id !== wordId);
-    // // assigns to the newly created array.
-    // setWords(mutableWords);
-    console.log(`delete: ${wordId}`);
+  const handleDelete = async (wordId) => {
+    await axios.delete(`${apiEndpoint}/${wordId}`);
+    setWords(words.filter(w => w.id !== wordId));
   }
 
   const handleAdd = async (word, color) => {
