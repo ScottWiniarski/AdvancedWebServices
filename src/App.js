@@ -6,7 +6,7 @@ import Counter from './components/Counter';
 import NewWord from './components/NewWord';
 
 const App = () => {
-  const apiEndpoint = "https://localhost:7083/api/word";
+  const apiEndpoint = "https://nugatory-sfw-delete.azurewebsites.net/api/word";
   const [words, setWords] = useState([]);
 
   const handleDelete = (wordId) => {
