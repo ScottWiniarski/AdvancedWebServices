@@ -10,8 +10,15 @@ const App = () => {
   const [words, setWords] = useState([]);
 
   const handleDelete = async (wordId) => {
+    const originalWords = words;
     setWords(words.filter(w => w.id !== wordId));
-    await axios.delete(`${apiEndpoint}/${wordId}`);
+    try {
+      await axios.delete(`${apiEndpoint}/${wordId}`);
+      throw new console.error('');
+    } catch(ex) {
+      alert('An error occurred while deleting a word');
+      setWords(originalWords);
+    }
   }
 
   const handleAdd = async (word, color) => {
