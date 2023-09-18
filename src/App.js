@@ -10,8 +10,8 @@ const App = () => {
   const [words, setWords] = useState([]);
 
   const handleDelete = async (wordId) => {
-    await axios.delete(`${apiEndpoint}/${wordId}`);
     setWords(words.filter(w => w.id !== wordId));
+    await axios.delete(`${apiEndpoint}/${wordId}`);
   }
 
   const handleAdd = async (word, color) => {
