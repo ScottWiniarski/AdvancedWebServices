@@ -17,12 +17,9 @@ const App = () => {
     console.log(`delete: ${wordId}`);
   }
 
-  const handleAdd = (word, color) => {
-    // const { words } = this.state;
-    // const id = words.length === 0 ? 1 : Math.max(...words.map(word => word.id)) + 1;
-    // const mutableWords = words.concat({ id: id, word: word, color: color });
-    // setWords(mutableWords);
-    console.log(`word: ${word}, color: ${color}`);
+  const handleAdd = async (word, color) => {
+    const { data: post } = await axios.post(apiEndpoint, { word: word, color: color });
+    setWords(words.concat(post));
   }
 
   // this is the functional equivalent to componentDidMount
