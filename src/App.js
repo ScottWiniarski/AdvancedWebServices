@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
 import Word from './components/Word';
+import axios from "axios";
 import Counter from './components/Counter';
 import NewWord from './components/NewWord';
 
